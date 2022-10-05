@@ -73,7 +73,7 @@ class MobileNetV2Tuner:
             tuner = kt.Hyperband(
                 self.__model_builder,
                 objective='val_accuracy',
-                max_trials=self.max_trials,
+                max_epochs=self.max_trials,
                 executions_per_trial=self.executions_per_trial,
                 overwrite=self.overwrite_results,
                 directory='Results',
