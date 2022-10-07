@@ -63,10 +63,10 @@ def get_validation_generator():
 def get_test_generator():
     test_datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
     return test_datagen.flow_from_directory(
-        os.path.join(MainConfig.DATA_DIR, MainConfig.VAL_DIR),
+        os.path.join(MainConfig.DATA_DIR, MainConfig.TEST_DIR),
         target_size=MainConfig.IMG_SIZE,
         color_mode=MainConfig.COLOR_MODE,
         batch_size=1,
-        class_mode=None,
+        class_mode=MainConfig.TRAIN_CLASS_MODE,
         shuffle=False
     )
